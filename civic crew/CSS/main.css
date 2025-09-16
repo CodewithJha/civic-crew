@@ -110,46 +110,59 @@ body {
     align-items: center;
     z-index: 2;
     position: relative;
-    animation: slideInRight 1s ease-out 0.4s both;
 }
 
 .video-container {
-    width: 500px;
-    height: 300px;
+    width: 400px;
+    height: 800px;
     background: rgba(13, 71, 161, 0.2);
-    border-radius: 10px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    border: 3px solid #1e88e5;
+    box-shadow: 0 0 30px rgba(30, 136, 229, 0.3), inset 0 0 20px rgba(30, 136, 229, 0.1);
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 23px; /* Slightly smaller than container to account for border */
+    display: block;
+}
+
+.custom-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 229, 255, 0.2);
+    border: 2px solid #00e5ff;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(10px);
-    border: 2px solid #1e88e5;
-    box-shadow: 0 0 30px rgba(30, 136, 229, 0.3), inset 0 0 20px rgba(30, 136, 229, 0.1);
+    cursor: pointer;
+    z-index: 10;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
-.video-container::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, #1e88e5, #00e5ff, #1e88e5, #00e5ff);
-    border-radius: 10px;
-    z-index: -1;
-    animation: borderRotate 3s linear infinite;
+.custom-play-btn:hover {
+    background: rgba(0, 229, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
-@keyframes borderRotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.video-container:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 20px 40px rgba(30, 136, 229, 0.4);
+.custom-play-btn span {
+    color: #00e5ff;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 3px; /* Slight offset for play icon */
 }
 
 .video-placeholder {
@@ -504,8 +517,8 @@ body {
     }
 
     .video-container {
-        width: 90%;
-        height: 200px;
+        width: 320px;
+        height: 520px;
     }
 
     .timeline-line {

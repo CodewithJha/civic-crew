@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Timeline Demo</title>
+    <title>Project Timeline</title>
     <link rel="stylesheet" href="CSS/main.css">
 </head>
 <body>
@@ -21,10 +21,15 @@
         </div>
         <div class="hero-video">
             <div class="video-container">
-                <div class="video-placeholder">
-                    <div class="play-btn"></div>
-                    <p>DEMO_VIDEO.mp4</p>
-                    <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">resolution: 1920x1080</p>
+                <video id="demoVideo" width="100%" height="100%" style="border-radius: 25px;" muted>
+                    <source src="assets/demo-video.mp4" type="video/mp4">
+                    <div class="video-placeholder">
+                        <p>DEMO_VIDEO.mp4</p>
+                        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Your browser does not support the video tag.</p>
+                    </div>
+                </video>
+                <div class="custom-play-btn" id="playPauseBtn">
+                    <span id="playIcon">▶</span>
                 </div>
             </div>
         </div>
@@ -37,7 +42,7 @@
     <section class="timeline-section">
         <div class="timeline-header">
             <h2>PROJECT TIMELINE</h2>
-            <p>Executing automated deployment sequence from initialization to production</p>
+            <p>Our Project Development Path</p>
         </div>
 
         <div class="timeline">
@@ -50,7 +55,7 @@
                         <h3 class="card-title">Understanding the Problem</h3>
                     </div>
                     <div class="card-content">
-                        <p>We understand the problem</p>
+                        <p>We identified the core issues to be solved.</p>
                         <ul class="card-features">
                             <li><a href="assets/brd/brd.pdf">Business Requirements Document</a></li>
                         
@@ -66,7 +71,7 @@
                         <h3 class="card-title">Stakeholder Analysis</h3>
                     </div>
                     <div class="card-content">
-                        <p>We understand the problem</p>
+                        <p>We analyzed stakeholders and their needs.</p>
                         <ul class="card-features">
                             <li><a href="assets/stakeholder-analysis/stakeholder-analysis.pdf">Stakeholder Analysis Document</a></li>
                         
@@ -82,7 +87,7 @@
                         <h3 class="card-title">Comparative Analysis</h3>
                     </div>
                     <div class="card-content">
-                        <p>Comprative Analysis</p>
+                        <p>We reviewed existing systems for insights.</p>
                         <ul class="card-features">
                             <li><a href="assets/comparative-analysis/everything-civic.pdf">Analysis of Everything Civic CRMs</a></li>
                             <li><a href="assets/comparative-analysis/open-311.pdf">Analysis of Open-311 Systems</a></li>
@@ -99,7 +104,7 @@
                         <h3 class="card-title">Requirement Collection</h3>
                     </div>
                     <div class="card-content">
-                        <p>Requriment gathering</p>
+                        <p>We gathered and finalized system requirements.</p>
                         <ul class="card-features">
                             <li><a href="assets/srs/srs.pdf">Software Requirements Specification</a></li>
                             
@@ -115,7 +120,7 @@
                         <h3 class="card-title">Architecture Design</h3>
                     </div>
                     <div class="card-content">
-                        <p>Architecture</p>
+                        <p>We designed the overall system structure.</p>
                         <ul class="card-features">
                             <li>Quantum API development</li>
                         </ul>
@@ -130,7 +135,7 @@
                         <h3 class="card-title">UI/UX Design</h3>
                     </div>
                     <div class="card-content">
-                        <p>UI/UX design</p>
+                        <p>We crafted intuitive and user-friendly designs.</p>
                         <ul class="card-features">
                             <li><a href="assets/wireframes/mobile-application.pdf">Mobile Application Wire-frame</a></li>
                             <li><a href="assets/wireframes/admin-portal.pdf">Admin Portal Wire-frame</a></li>
@@ -146,7 +151,7 @@
                         <h3 class="card-title">Frontend Development</h3>
                     </div>
                     <div class="card-content">
-                        <p>frontend</p>
+                        <p>We developed the interactive user interface.</p>
                         <ul class="card-features">
                             <li><a href="https://github.com/ashraddhansh/civic-app-frontend">Frontend GitHub Repository</a></li>
                         </ul>
@@ -162,7 +167,7 @@
                         <h3 class="card-title">Backend Development</h3>
                     </div>
                     <div class="card-content">
-                        <p>frontend</p>
+                        <p>We built the core logic and database.</p>
                         <ul class="card-features">
                             <li><a href="https://github.com/ashraddhansh/civic-ops">Backend GitHub Repository</a></li>
                         </ul>

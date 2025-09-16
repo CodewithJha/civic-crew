@@ -21,9 +21,63 @@ function createMatrixRain() {
     }
 }
 
+// Custom video player controls
+function initCustomVideoPlayer() {
+    const video = document.getElementById('demoVideo');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playIcon = document.getElementById('playIcon');
+    
+    if (!video || !playPauseBtn || !playIcon) return;
+    
+    playPauseBtn.addEventListener('click', function() {
+        if (video.paused) {
+            video.play();
+            playIcon.textContent = '⏸';
+            playPauseBtn.style.opacity = '0.7';
+        } else {
+            video.pause();
+            playIcon.textContent = '▶';
+            playPauseBtn.style.opacity = '1';
+        }
+    });
+    
+    // Hide play button when video is playing, show when paused
+    video.addEventListener('play', function() {
+        setTimeout(() => {
+            if (!video.paused) {
+                playPauseBtn.style.opacity = '0';
+            }
+        }, 1000);
+    });
+    
+    video.addEventListener('pause', function() {
+        playPauseBtn.style.opacity = '1';
+        playIcon.textContent = '▶';
+    });
+    
+    // Show play button on hover when video is playing
+    const videoContainer = document.querySelector('.video-container');
+    videoContainer.addEventListener('mouseenter', function() {
+        if (!video.paused) {
+            playPauseBtn.style.opacity = '0.7';
+        }
+    });
+    
+    videoContainer.addEventListener('mouseleave', function() {
+        if (!video.paused) {
+            setTimeout(() => {
+                if (!video.paused) {
+                    playPauseBtn.style.opacity = '0';
+                }
+            }, 500);
+        }
+    });
+}
+
 // Smooth scrolling for hero section
 document.addEventListener('DOMContentLoaded', function() {
     createMatrixRain();
+    initCustomVideoPlayer();
     
     const scrollIndicator = document.querySelector('.scroll-indicator');
     const timelineSection = document.querySelector('.timeline-section');
